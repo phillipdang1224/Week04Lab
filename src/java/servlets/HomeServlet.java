@@ -17,15 +17,15 @@ public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        if (request.getParameter("login") != null) {
-
-            request.setAttribute("message", "Logout Successful");
-            getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-
-        } else {
+        HttpSession session = request.getSession();
+        if(session.getAttribute("name") != null){
             getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
+
+        }else{
+            response.sendRedirect("login");
+
         }
+        
     }
 
     @Override

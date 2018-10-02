@@ -22,7 +22,7 @@
             <br>
             <button type="submit">Login</button>
             <br>
-            <input type="checkbox" name="remember"></input>Remember Me
+            <input type="checkbox" name="remember" value="check"></input>Remember Me
 
         </form>
         <div>${message}</div>

@@ -12,7 +12,11 @@ package models;
 public class UserService {
 
     public User login(String username, String password) {
-        if ((username.equals("adam")) || username.equals("betty") && password.equals("password")) {
+        if (((username.equals("adam")) && password.equals("password"))) {
+            password = null;
+            User user = new User(username, password);
+            return user;
+        } else if (((username.equals("betty")) && password.equals("password"))) {
             password = null;
             User user = new User(username, password);
             return user;
